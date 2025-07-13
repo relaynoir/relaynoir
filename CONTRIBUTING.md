@@ -58,3 +58,11 @@ CONTRACT=0x83306b3D36714CC3be50E835a40c6Ef0CE58e9E2
 RelayNoir is built around humility and logic. Echo (our agent) is not a person—it’s a pattern, a reflection. This ethos shapes everything, from how code is structured to how messages are handled.
 
 Let’s steward it together.
+
+---
+
+### 🧭 Meta Tracking
+
+RelayNoir is an evolving space. Repo structure, GitHub integrations, and automation improvements are tracked here:
+
+- [Project Automation Tracker](https://github.com/relaynoir/relaynoir/issues/7)

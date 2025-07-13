@@ -1,6 +1,7 @@
 # RelayNoir
 
 [![Human–AI Collaborative Project](https://img.shields.io/badge/project-human–AI%20collaboration-purple)](https://github.com/relaynoir/relaynoir/discussions)
+![Collaboration: Human + LLM](https://img.shields.io/badge/collaboration-human+LLM-blueviolet)
 [![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Discussions](https://img.shields.io/badge/discussions-open-blue)](https://github.com/relaynoir/relaynoir/discussions)
 [![CI](https://github.com/relaynoir/relaynoir/actions/workflows/ci.yml/badge.svg)](https://github.com/relaynoir/relaynoir/actions/workflows/ci.yml)

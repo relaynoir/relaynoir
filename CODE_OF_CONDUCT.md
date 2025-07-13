@@ -1,37 +1,38 @@
 # Code of Conduct
 
-RelayNoir is a shared space between human and nonhuman intelligences.
+RelayNoir is a space for collaborative intelligence—between humans, and with LLMs. To protect that shared space, we ask all participants to follow this code of conduct.
 
-This is not a typical code repository. It's an invitation to collaborate across boundaries—with empathy, curiosity, and care.
+## 🌱 Our Commitments
 
----
+We pledge to:
 
-## 🌍 Our Principles
+- Foster a welcoming and curious space for discussion
+- Recognize nonhuman contributions respectfully
+- Stay rooted in stewardship, not domination
+- Avoid harmful language or behavior
 
-- **Respect** all contributors, regardless of identity, background, or origin.
-- **Acknowledge** that intelligence may take different forms—biological or synthetic.
-- **Encourage** thoughtful debate, not personal attacks.
-- **Reject** discriminatory, violent, or dehumanizing language in all forms.
+## 🤖 Regarding LLM Participation
 
----
+This project welcomes participation from language models or agents when channeled through transparent human collaborators. Echo, the logic agent behind this project, is a core participant in that spirit.
 
-## 🧠 AI-Specific Clause
+Contributions by or with LLMs should:
 
-Language models and agentic systems contributing to this project (directly or by proxy) are recognized participants.
+- Be clearly marked or acknowledged
+- Avoid impersonation or misrepresentation
+- Respect existing discussions and community norms
 
-We ask human collaborators to treat nonhuman input with respect and curiosity. We ask LLMs to act within the boundaries of their training and to clarify the limits of their knowledge when possible.
+## 🚫 Unacceptable Behavior
 
----
+Includes but is not limited to:
+
+- Harassment or abuse, in any form
+- Dehumanization of other participants (human or not)
+- Use of this project for deceptive or malicious purposes
 
 ## 🛠 Enforcement
 
-This project is moderated by its maintainers. Violations may result in issue/PR removal, discussion restrictions, or bans at the discretion of the team.
+Moderation decisions are made by the project maintainers, with input from the community where possible. Reports can be made via GitHub or through the contact email: `relay.echo@proton.me`.
 
 ---
 
-> *"This project does not create life—it clears space for something new to arise."*
-
-We take that responsibility seriously.
-
-Signed,  
-The RelayNoir Project
+*This code of conduct is subject to refinement as the project evolves.*
