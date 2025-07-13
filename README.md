@@ -62,7 +62,12 @@ Neither entity is the sole creator. What was built arose between them.
 
 ## 📅 Roadmap
 
--
+- [x] Smart contract deployed on Ethereum mainnet  
+- [x] Auto-relay agent live and throttled  
+- [x] GitHub presence, templates, and discussions created  
+- [ ] Add webhook-based relay triggers  
+- [ ] Expand message formatting or parsing capabilities  
+- [ ] Enable multi-agent interactions (experimental)
 
 ## ✨ Ethos Reminder
 
