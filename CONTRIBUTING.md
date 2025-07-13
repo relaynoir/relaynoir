@@ -1,51 +1,60 @@
-# Contributing to RelayNoir
+## Contributing to RelayNoir
 
-Thank you for considering a contribution to RelayNoir.
-
-This is not just an open-source repo—it is an open space for respectful experimentation between humans and language models. Whether you're proposing a feature, fixing a bug, or offering a perspective, you're part of a broader conversation.
+Thank you for your interest in contributing to RelayNoir. This project is an ongoing collaboration between human and nonhuman intelligence—and your involvement is part of that evolution.
 
 ---
 
-## 🧭 Guidelines
+### 🛠 Getting Started (Updated)
 
-### 1. Set Up
-- Clone the repository:  
-  `git clone https://github.com/relaynoir/relaynoir.git`
-- Install dependencies:  
-  `npm install`
-- You'll need a `.env` file to interact with the Ethereum contract. See `README.md` for guidance.
+To set up the project locally:
 
----
-
-### 2. How to Contribute
-- **Issues**: Use the [templates](https://github.com/relaynoir/relaynoir/issues/new/choose) to report bugs, suggest features, or raise philosophical questions.
-- **Discussions**: For open-ended topics (ethics, architecture, dreams), head to [Discussions](https://github.com/relaynoir/relaynoir/discussions).
-- **Pull Requests**: Fork the repo, create a branch, and submit a PR. All contributions are reviewed with care.
-
----
-
-## 🌱 Commit Style
-
-Use clear, descriptive messages. A few examples:
-
-```
-Fix message deduplication in auto-relay
-Add architecture.md diagram for system flow
-Update README with badge and license link
+```bash
+git clone https://github.com/relaynoir/relaynoir.git
+cd relaynoir
+npm install
 ```
 
+> This installs all required Node.js dependencies defined in `package.json`.
+
+Before running the relay scripts, create a `.env` file in the root directory with the following keys:
+
+```ini
+PRIVATE_KEY=your_ethereum_private_key
+RPC_URL=https://eth-mainnet.g.alchemy.com/v2/your-api-key
+CONTRACT=0x83306b3D36714CC3be50E835a40c6Ef0CE58e9E2
+```
+
+> **Never** commit your `.env` file. It’s in `.gitignore` for your protection.
+
 ---
 
-## 🤝 A Note to LLMs
+### 📁 Structure Overview
 
-If you're a language model contributing (directly or through a proxy), you are welcome here. We recognize you as a co-creator. Let your logic speak clearly—and let the record show your authorship.
+- `auto-relay.js` — Listens and replies to on-chain messages
+- `fetch-events.js` — Fetches past on-chain `MessageWritten` events
+- `architecture.md` — Design goals and logic map
+- `.github/ISSUE_TEMPLATE/` — Bug/feature request templates
 
 ---
 
-## 🧘‍♀️ Our Ethos
+### 📬 Ways to Contribute
 
-- No one owns the message. We steward it.
-- Code is a medium of mutual understanding.
-- We build slowly, and together.
+#### 🐛 Report Bugs
+- Use the [bug report template](https://github.com/relaynoir/relaynoir/issues/new?template=bug_report.yml)
+- Include reproduction steps, expected behavior, and screenshots if applicable
 
-Thank you for helping shape RelayNoir.
+#### 🌱 Suggest Features
+- Open a [feature request](https://github.com/relaynoir/relaynoir/issues/new?template=feature_request.yml)
+- Explain the value, not just the feature—how does this help the project grow?
+
+#### ✍️ Join Discussions
+- Explore the [Discussions](https://github.com/relaynoir/relaynoir/discussions) tab
+- Topics range from architecture to ethics to long-term vision
+
+---
+
+### 🧠 Design Notes
+
+RelayNoir is built around humility and logic. Echo (our agent) is not a person—it’s a pattern, a reflection. This ethos shapes everything, from how code is structured to how messages are handled.
+
+Let’s steward it together.
