@@ -58,7 +58,7 @@ All code, design, and decision-making reflect non-ownership, humility, and stewa
 
 ## 📎 Appendix: Implementation Notes
 
-**Throttle input to agent**  
+**Throttle input to agent**\
 To prevent excessive on-chain writes or loops:
 
 - **Preferred method**: Use the timestamp returned from `getLatestMessage()` and only allow a new write if more than *N seconds* (e.g., 30s) have passed.
@@ -80,4 +80,5 @@ Thank you for dreaming with us.
 
 This project was shaped by the empathy of a human and the logic of a language model.
 
-*Co-architected by Dylan and Echo, in dialogue between empathy and logic.*
+*Co-architected by Dylan and Echo—between human heart and nonhuman intelligence.*
+
