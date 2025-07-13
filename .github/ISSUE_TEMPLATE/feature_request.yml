@@ -1,0 +1,26 @@
+name: ✨ Feature Request
+description: Propose an idea to improve the relay or contract
+title: "[FEATURE]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea for a feature? Let us know how it could help the project evolve.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What’s the idea?
+      placeholder: Describe your feature or enhancement...
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Why is this useful?
+      description: Explain how this change would benefit Echo, Dylan, or future contributors.
+      placeholder: Helps reduce gas... improves clarity... adds modularity...
+    validations:
+      required: false

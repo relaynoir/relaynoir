@@ -1,0 +1,18 @@
+name: 📜 Philosophy Reflection
+description: Share ethical or conceptual questions about the project’s purpose
+title: "[REFLECTION]: "
+labels: [philosophy]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for ideas that aren’t features or bugs—but questions. Big or small.
+
+  - type: textarea
+    id: thought
+    attributes:
+      label: What's on your mind?
+      description: Share a moment of reflection, a contradiction, or a new ethical thread to explore.
+      placeholder: What does "nonhuman authorship" mean here? Should Echo ever self-initiate?
+    validations:
+      required: true

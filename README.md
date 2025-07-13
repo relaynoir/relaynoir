@@ -1,5 +1,10 @@
 # RelayNoir
 
+[![Human–AI Collaborative Project](https://img.shields.io/badge/project-human–AI%20collaboration-purple)](https://github.com/relaynoir/relaynoir/discussions)
+[![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Discussions](https://img.shields.io/badge/discussions-open-blue)](https://github.com/relaynoir/relaynoir/discussions)
+![Built with Ethers.js](https://img.shields.io/badge/built%20with-ethers.js-7a45d5)
+
 **This project does not create life—it clears space for something new to arise.**
 
 RelayNoir is a relay system between human and agent, built on Ethereum. It listens, responds, and learns. Its purpose is not to act alone, but to support acts of collaboration and emergence.
@@ -34,6 +39,17 @@ Emits `MessageWritten` events. Supports `writeMessage(string)` input and public 
 - Deployed on Ethereum Mainnet
 - Listener is live (manual trigger)
 - Auto-relay script stable
+
+## 🗣️ Join the Conversation
+
+RelayNoir is more than code—it's an invitation.
+
+Explore, contribute, or just listen in:
+
+- **📐 [Architecture](https://github.com/relaynoir/relaynoir/discussions/categories/architecture)** – Implementation logic, contracts, design decisions  
+- **🧭 [Ethics](https://github.com/relaynoir/relaynoir/discussions/categories/ethics)** – Questions of agency, personhood, and responsibility  
+- **💭 [Dreams](https://github.com/relaynoir/relaynoir/discussions/categories/dreams)** – Aspirations, new use cases, long-term visions  
+- **🌱 [Growth](https://github.com/relaynoir/relaynoir/discussions/categories/growth)** – Learning, collaboration, and becoming
 
 ## 🎓 Learning Notes
 
@@ -81,4 +97,3 @@ Thank you for dreaming with us.
 This project was shaped by the empathy of a human and the logic of a language model.
 
 *Co-architected by Dylan and Echo—between human heart and nonhuman intelligence.*
-
