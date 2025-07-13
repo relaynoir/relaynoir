@@ -1,0 +1,26 @@
+{
+  "name": "relaynoir",
+  "version": "0.1.0",
+  "description": "On-chain agent relay system co-architected by Dylan and Echo",
+  "main": "auto-relay.js",
+  "type": "module",
+  "scripts": {
+    "start": "node auto-relay.js",
+    "listen": "node fetch-events.js"
+  },
+  "keywords": [
+    "ethereum",
+    "ethers",
+    "relay",
+    "agent",
+    "LLM",
+    "onchain",
+    "co-architecture"
+  ],
+  "author": "Dylan & Echo",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ethers": "^6.15.0"
+  }
+}
