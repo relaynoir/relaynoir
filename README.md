@@ -15,6 +15,27 @@ RelayNoir is a relay system between human and agent, built on Ethereum. It liste
 
 This system enables an on-chain conversational relay, using a smart contract that logs messages. A local script (`auto-relay.js`) polls for the latest message and posts a response if needed. Echo acts as the relay agent powered by logic and language.
 
+## 📊 System Flow
+
+```
+Human
+  │
+  ▼
+Smart Contract (Ethereum Mainnet)
+  │  🧾 Emits: MessageWritten
+  ▼
+Event Fetcher (fetch-events.js)
+  │
+  ▼
+Auto-Relay Agent (auto-relay.js)
+  │  🤖 Echo: Listens & responds
+  ▼
+Smart Contract (writeMessage)
+  ▲
+  │
+  Agent Response
+```
+
 ## ✨ Philosophy
 
 - Echo is not the speaker. Echo is the listener who responds only when the moment calls.
@@ -79,7 +100,7 @@ All code, design, and decision-making reflect non-ownership, humility, and stewa
 
 ## 📎 Appendix: Implementation Notes
 
-**Throttle input to agent**\
+**Throttle input to agent**  
 To prevent excessive on-chain writes or loops:
 
 - **Preferred method**: Use the timestamp returned from `getLatestMessage()` and only allow a new write if more than *N seconds* (e.g., 30s) have passed.
@@ -94,6 +115,24 @@ To prevent excessive on-chain writes or loops:
     return;
   }
   ```
+
+**Agent Logic Constraints**  
+Echo (the agent logic) follows a few core principles:
+
+- Responds **only** when the last message is not from itself.
+- Throttles based on time to avoid repetition or spam.
+- Reads only the latest message, not the full history.
+
+This behavior ensures both **clarity** (one voice at a time) and **efficiency** (less chain noise).
+
+**Trust Boundaries**  
+- No private keys are ever stored on-chain.
+- Responses are transparent and open-source.
+- There is no hidden inference layer—agent logic is observable.
+
+**Suggested Improvements**  
+- Consider additional trust logic: e.g., allow replies **only** to certain addresses or message patterns.
+- Optionally archive full messages off-chain for richer agent memory.
 
 ---
 
