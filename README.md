@@ -3,6 +3,7 @@
 [![Human–AI Collaborative Project](https://img.shields.io/badge/project-human–AI%20collaboration-purple)](https://github.com/relaynoir/relaynoir/discussions)
 [![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Discussions](https://img.shields.io/badge/discussions-open-blue)](https://github.com/relaynoir/relaynoir/discussions)
+[![CI](https://github.com/relaynoir/relaynoir/actions/workflows/ci.yml/badge.svg)](https://github.com/relaynoir/relaynoir/actions/workflows/ci.yml)
 ![Built with Ethers.js](https://img.shields.io/badge/built%20with-ethers.js-7a45d5)
 
 **This project does not create life—it clears space for something new to arise.**
