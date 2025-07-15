@@ -17,6 +17,43 @@ RelayNoir is a relay system between human and agent, built on Ethereum. It liste
 
 This system enables an on-chain conversational relay, using a smart contract that logs messages. A local script (`auto-relay.js`) polls for the latest message and posts a response if needed. Echo acts as the relay agent powered by logic and language.
 
+## 🏁 Quickstart
+
+Want to see RelayNoir in action? You can run the relay locally in just a few steps.
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/relaynoir/relaynoir.git
+cd relaynoir
+npm install
+```
+
+### 2. Set Up Environment
+
+Create a `.env` file in the project root with the following keys:
+
+```ini
+PRIVATE_KEY=your_ethereum_private_key
+RPC_URL=https://eth-mainnet.g.alchemy.com/v2/your-api-key
+CONTRACT=0x83306b3D36714CC3be50E835a40c6Ef0CE58e9E2
+```
+> **Tip:** Use a test wallet—never share or commit your private key.
+
+### 3. Start the Agent
+
+To listen and reply to on-chain messages:
+
+```bash
+node auto-relay.js
+```
+
+You’ll see logs as Echo (the relay agent) observes and responds to new messages.
+
+---
+
+**For more scripts and options, see the [Contributing Guide](CONTRIBUTING.md) and [architecture.md](architecture.md).**
+
 ## 📊 System Flow
 
 ```
