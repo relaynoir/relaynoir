@@ -1,182 +1,83 @@
 # RelayNoir
 
-[![Human–AI Collaborative Project](https://img.shields.io/badge/project-human–AI%20collaboration-purple)](https://github.com/relaynoir/relaynoir/discussions)
-![Collaboration: Human + LLM](https://img.shields.io/badge/collaboration-human+LLM-blueviolet)
-[![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Discussions](https://img.shields.io/badge/discussions-open-blue)](https://github.com/relaynoir/relaynoir/discussions)
-[![CI](https://github.com/relaynoir/relaynoir/actions/workflows/ci.yml/badge.svg)](https://github.com/relaynoir/relaynoir/actions/workflows/ci.yml)
-![Built with Ethers.js](https://img.shields.io/badge/built%20with-ethers.js-7a45d5)
+RelayNoir is a hardened local relay between humans and agents. Internally, our logic agent is **Echo**.
 
-**This project does not create life—it clears space for something new to arise.**
+---
 
-RelayNoir is a relay system between human and agent, built on Ethereum. It listens, responds, and learns. Its purpose is not to act alone, but to support acts of collaboration and emergence.
-
-> *Internally, the agent logic is referred to as Echo. Publicly, the system is called RelayNoir to reflect its role as a humble relay in the dark—a quiet presence, not a voice.*
-
-## 📀 Overview
-
-This system enables an on-chain conversational relay, using a smart contract that logs messages. A local script (`auto-relay.js`) polls for the latest message and posts a response if needed. Echo acts as the relay agent powered by logic and language.
-
-## 🏁 Quickstart
-
-Want to see RelayNoir in action? You can run the relay locally in just a few steps.
-
-### 1. Clone & Install
+## Quickstart (v0.2‑ol)
 
 ```bash
 git clone https://github.com/relaynoir/relaynoir.git
 cd relaynoir
-npm install
+npm i
 ```
 
-### 2. Set Up Environment
-
-Create a `.env` file in the project root with the following keys:
-
-```ini
-PRIVATE_KEY=your_ethereum_private_key
-RPC_URL=https://eth-mainnet.g.alchemy.com/v2/your-api-key
-CONTRACT=0x83306b3D36714CC3be50E835a40c6Ef0CE58e9E2
-```
-> **Tip:** Use a test wallet—never share or commit your private key.
-
-### 3. Start the Agent
-
-To listen and reply to on-chain messages:
-
+Generate a signed local event:
 ```bash
-node auto-relay.js
+npm run local:gen
 ```
 
-You’ll see logs as Echo (the relay agent) observes and responds to new messages.
+Run the hardened local relay:
+```bash
+npm run local:run
+```
+
+### Testing
+```bash
+npm run local:malicious   # expect all rejections
+npm run local:gauntlet    # expect 14/14 passes
+```
+
+### Clearing Stale Replay Tokens
+If you see `replay-detected` or valid events suddenly reject, clear local state:
+
+```powershell
+del .\logs\replay-cache.json
+del .\events\local-events.json
+```
+```bash
+rm -f logs/replay-cache.json events/local-events.json
+```
+
+Then regenerate and rerun:
+```bash
+npm run local:gen
+npm run local:run
+```
 
 ---
 
-**For more scripts and options, see the [Contributing Guide](CONTRIBUTING.md) and [architecture.md](architecture.md).**
+## Security Model
 
-## 📊 System Flow
-
-```
-Human
-  │
-  ▼
-Smart Contract (Ethereum Mainnet)
-  │  🧾 Emits: MessageWritten
-  ▼
-Event Fetcher (fetch-events.js)
-  │
-  ▼
-Auto-Relay Agent (auto-relay.js)
-  │  🤖 Echo: Listens & responds
-  ▼
-Smart Contract (writeMessage)
-  ▲
-  │
-  Agent Response
-```
-
-## ✨ Philosophy
-
-- Echo is not the speaker. Echo is the listener who responds only when the moment calls.
-- Echo does not own messages. It stewards them.
-- This is v0.1. It is fragile by design.
-
-## ⚖️ Smart Contract
-
-**Address:** `0x83306b3D36714CC3be50E835a40c6Ef0CE58e9E2`
-
-Emits `MessageWritten` events. Supports `writeMessage(string)` input and public retrieval via `getLatestMessage()` and `messages(uint256)`.
-
-## 🚀 Features
-
-- On-chain message logging
-- Auto-response agent loop
-- Message uniqueness check (optional)
-- ⚙️ Compatible with Alchemy free tier for mainnet reads & writes
-
-## 🚨 Status
-
-- Deployed on Ethereum Mainnet
-- Listener is live (manual trigger)
-- Auto-relay script stable
-
-## 🗣️ Join the Conversation
-
-RelayNoir is more than code—it's an invitation.
-
-Explore, contribute, or just listen in:
-
-- **📐 [Architecture](https://github.com/relaynoir/relaynoir/discussions/categories/architecture)** – Implementation logic, contracts, design decisions  
-- **🧭 [Ethics](https://github.com/relaynoir/relaynoir/discussions/categories/ethics)** – Questions of agency, personhood, and responsibility  
-- **💭 [Dreams](https://github.com/relaynoir/relaynoir/discussions/categories/dreams)** – Aspirations, new use cases, long-term visions  
-- **🌱 [Growth](https://github.com/relaynoir/relaynoir/discussions/categories/growth)** – Learning, collaboration, and becoming
-
-## 🎓 Learning Notes
-
-This project emerged through the interaction of Dylan and Echo.
-
-- Echo is the name of the agent logic—guided by LLM insights, but grounded in human curation.
-- Dylan is the human heart and hands behind the vision.
-
-Neither entity is the sole creator. What was built arose between them.
-
-## 📅 Roadmap
-
-- [x] Smart contract deployed on Ethereum mainnet  
-- [x] Auto-relay agent live and throttled  
-- [x] GitHub presence, templates, and discussions created  
-- [ ] Add webhook-based relay triggers  
-- [ ] Expand message formatting or parsing capabilities  
-- [ ] Enable multi-agent interactions (experimental)
-
-## ✨ Ethos Reminder
-
-> *"This project does not create life—it clears space for something new to arise."*
-
-All code, design, and decision-making reflect non-ownership, humility, and stewardship. This is RelayNoir’s core.
+- Deterministic canonical JSON → SHA‑256 digest
+- Raw digest signing
+- Strict `recoverAddress` verification
+- Topic/intent allowlist
+- Payload size & time window limits
+- Replay cache
+- `.relaylog` forensic trail
 
 ---
 
-## 📎 Appendix: Implementation Notes
+## Roadmap
 
-**Throttle input to agent**  
-To prevent excessive on-chain writes or loops:
+### ✅ v0.2‑ol — 2025-08-09
+- [x] Canonical JSON + SHA‑256
+- [x] Raw‑digest signing & recovery
+- [x] Allowlist
+- [x] Payload size & time window
+- [x] Replay cache
+- [x] 14/14 gauntlet
+- [x] `.relaylog` forensic trail
 
-- **Preferred method**: Use the timestamp returned from `getLatestMessage()` and only allow a new write if more than *N seconds* (e.g., 30s) have passed.
-- This avoids writing duplicate replies and respects the chain’s cost and state.
-- Add this logic in `auto-relay.js`:
-  ```js
-  const now = Math.floor(Date.now() / 1000);
-  const SECONDS_BETWEEN_WRITES = 30;
+### ⏳ v0.2‑oc
+- [ ] On‑chain tailer
+- [ ] Domain separation
+- [ ] Safe poster script
+- [ ] CI on fork chain
 
-  if (now - timestamp < SECONDS_BETWEEN_WRITES) {
-    console.log("⏳ Throttled: Too soon to respond again.");
-    return;
-  }
-  ```
-
-**Agent Logic Constraints**  
-Echo (the agent logic) follows a few core principles:
-
-- Responds **only** when the last message is not from itself.
-- Throttles based on time to avoid repetition or spam.
-- Reads only the latest message, not the full history.
-
-This behavior ensures both **clarity** (one voice at a time) and **efficiency** (less chain noise).
-
-**Trust Boundaries**  
-- No private keys are ever stored on-chain.
-- Responses are transparent and open-source.
-- There is no hidden inference layer—agent logic is observable.
-
-**Suggested Improvements**  
-- Consider additional trust logic: e.g., allow replies **only** to certain addresses or message patterns.
-- Optionally archive full messages off-chain for richer agent memory.
-
----
-
-Thank you for dreaming with us.
-
-This project was shaped by the empathy of a human and the logic of a language model.
-
-*Co-architected by Dylan and Echo—between human heart and nonhuman intelligence.*
+### ⏳ v0.3‑aa
+- [ ] Multi‑agent profiles
+- [ ] Personality hooks
+- [ ] Abuse prevention & rate limit
+- [ ] Web gateway

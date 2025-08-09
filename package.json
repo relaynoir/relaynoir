@@ -1,12 +1,18 @@
 {
   "name": "relaynoir",
-  "version": "0.1.0",
-  "description": "On-chain agent relay system co-architected by Dylan and Echo",
+  "version": "0.2.0-ol",
+  "description": "RelayNoir v0.2-ol (optimized-local): hardened local relay for LLM agents",
   "main": "auto-relay.js",
   "type": "module",
   "scripts": {
     "start": "node auto-relay.js",
-    "listen": "node fetch-events.js"
+    "listen": "node auto-relay.js",
+    "local:run": "node auto-relay.js",
+    "local:gen": "node localtest/generateSignedEvent.js",
+    "local:malicious": "node localtest/runMaliciousPack.js",
+    "local:gauntlet": "node localtest/runFullGauntlet.js",
+    "decode": "node localtest/decode.js",
+    "decode:why": "node localtest/decodeWhy.js"
   },
   "keywords": [
     "ethereum",
@@ -14,8 +20,8 @@
     "relay",
     "agent",
     "LLM",
-    "onchain",
-    "co-architecture"
+    "security",
+    "signature"
   ],
   "author": "Dylan & Echo",
   "license": "MIT",
